@@ -35,12 +35,12 @@ export const App = () => {
 
       <table className="table">
         <tbody>
-          {goods.map((good, index) => {
+          {goods.map(good => {
             const thisIsTheSelectedGood = good === selectedGood;
 
             return (
               <tr
-                key={goods[index]}
+                key={good}
                 data-cy="Good"
                 className={classNames({
                   'has-background-success-light': thisIsTheSelectedGood,
@@ -61,7 +61,7 @@ export const App = () => {
                       data-cy="AddButton"
                       type="button"
                       className="button"
-                      onClick={() => setSelectedGood(goods[index])}
+                      onClick={() => setSelectedGood(good)}
                     >
                       +
                     </button>
@@ -69,7 +69,7 @@ export const App = () => {
                 </td>
 
                 <td data-cy="GoodTitle" className="is-vcentered">
-                  {goods[index]}
+                  {good}
                 </td>
               </tr>
             );
